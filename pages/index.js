@@ -57,9 +57,9 @@ export default function Home(props) {
       <Metatags title="Home Page" description="Get the latest posts on our site" />
 
       <div className="card card-info">
-        <h2>Social - A web app for Making posts and blogs about you.</h2>
-        <p>Welcome! This app is built with Next.js , Angular and Firebase with security.</p>
-        <p>Sign up for an 👨‍🎤 account, ✍️ write posts, then 💞 like content created by other users.</p>
+        <h2>💡 Next.js + Firebase - The Full Course</h2>
+        <p>Welcome! This app is built with Next.js and Firebase and is loosely inspired by Dev.to.</p>
+        <p>Sign up for an 👨‍🎤 account, ✍️ write posts, then 💞 heart content created by other users. All public content is server-rendered and search-engine optimized.</p>
       </div>
      
       <PostFeed posts={posts} />

@@ -80,7 +80,7 @@ function CreateNewPost() {
       <input
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        placeholder="Write your own article title"
+        placeholder="My Awesome Article!"
         className={styles.input}
       />
       <p>

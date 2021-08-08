@@ -97,7 +97,7 @@ function UsernameForm() {
       if (username.length >= 3) {
         const ref = firestore.doc(`usernames/${username}`);
         const { exists } = await ref.get();
-        console.log('Core read');
+        console.log('Firestore read executed!');
         setIsValid(!exists);
         setLoading(false);
       }
@@ -108,21 +108,21 @@ function UsernameForm() {
   return (
     !username && (
       <section>
-        <h3>Username</h3>
+        <h3>Choose Username</h3>
         <form onSubmit={onSubmit}>
-          <input name="username" placeholder="UserName" value={formValue} onChange={onChange} />
+          <input name="username" placeholder="myname" value={formValue} onChange={onChange} />
           <UsernameMessage username={formValue} isValid={isValid} loading={loading} />
           <button type="submit" className="btn-green" disabled={!isValid}>
             Choose
           </button>
 
-          <h3>Debug logs</h3>
+          <h3>Debug State</h3>
           <div>
-            Username Entered: {formValue}
+            Username: {formValue}
             <br />
-            Loading Status: {loading.toString()}
+            Loading: {loading.toString()}
             <br />
-            Username availability: {isValid.toString()}
+            Username Valid: {isValid.toString()}
           </div>
         </form>
       </section>
@@ -136,7 +136,7 @@ function UsernameMessage({ username, isValid, loading }) {
   } else if (isValid) {
     return <p className="text-success">{username} is available!</p>;
   } else if (username && !isValid) {
-    return <p className="text-danger">username is taken!</p>;
+    return <p className="text-danger">That username is taken!</p>;
   } else {
     return <p></p>;
   }
